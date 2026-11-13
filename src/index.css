@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fredoka", ui-rounded, system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-1.5deg);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(1.5deg);
+  }
+}
+
+@keyframes driftCloud {
+  0%, 100% {
+    transform: translate3d(-12px, 0, 0);
+  }
+  50% {
+    transform: translate3d(14px, -4px, 0);
+  }
+}
+
+@keyframes twinkleStar {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(0.9) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(12deg);
+  }
+}
+
+@keyframes butterflyFlutter {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-6deg);
+  }
+  25% {
+    transform: translate3d(10px, -12px, 0) rotate(4deg);
+  }
+  50% {
+    transform: translate3d(18px, -4px, 0) rotate(-3deg);
+  }
+  75% {
+    transform: translate3d(6px, 8px, 0) rotate(6deg);
+  }
+}
+
+@keyframes wingFlap {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.55);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatSlow 7.5s ease-in-out 1.5s infinite;
+}
+
+.animate-drift-cloud {
+  animation: driftCloud 12s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkleStar 3.4s ease-in-out infinite;
+}
+
+.animate-butterfly {
+  animation: butterflyFlutter 9s ease-in-out infinite;
+}
+
+.animate-wing {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wingFlap 0.45s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-float-slow,
+  .animate-float-delayed,
+  .animate-drift-cloud,
+  .animate-twinkle,
+  .animate-butterfly,
+  .animate-wing {
+    animation: none !important;
+  }
+}

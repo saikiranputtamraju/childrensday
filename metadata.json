@@ -1,0 +1,6 @@
+{
+  "name": "Happy Children's Day – Photo Magic 2026",
+  "description": "Create magical Happy Children's Day 2026 framed photos right in your browser with local photo upload, camera capture, 5 custom pastel frames, and instant PNG download.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}
